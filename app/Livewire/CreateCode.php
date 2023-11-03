@@ -36,14 +36,30 @@ class CreateCode extends Component
         'tools_power_drill',
         'nest_eco_leaf',
         'air_freshener',
+        'hiking',
+        'light',
+        'surfing',
+        'piano',
+        'toys_fan',
+        'fertile',
+        'bedtime',
+        'social_leaderboard',
+        'extension',
+        // 'chat',
+        // 'adjust',
     ];
+
+
 
     #[Computed(persist: true)]
     public function letters(): array
     {
         shuffle($this->symbols);
 
-        return collect(range('a', 'z'))
+        return collect([
+            'a', 'ą', 'b', 'c', 'ć', 'd', 'e', 'ę', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'ł',
+            'm', 'n', 'ń', 'o', 'ó', 'p', 'q', 'r', 's', 'ś', 't', 'u', 'v', 'w', 'x', 'y', 'z', 'ź', 'ż'
+        ])
             ->combine($this->symbols)
             ->toArray();
     }
